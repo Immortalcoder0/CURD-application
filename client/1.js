@@ -3,7 +3,7 @@ const tableBody = document.querySelector("#userTable tbody");
 const editOverlay = document.getElementById("editOverlay");
 const editForm = document.getElementById("editForm");
 const cancelEdit = document.getElementById("cancelEdit");
-const API_BASE = "https://curd-application-kzpv.onrender.com/";
+const API_BASE = "https://curd-application-kzpv.onrender.com";
 
 function loadUsers() {
   fetch(`${API_BASE}/users`)

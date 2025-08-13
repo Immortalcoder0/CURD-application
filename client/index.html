@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Application</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+<body>
+
+  <div class="addUser">
+    <h2>Add New User</h2>
+    <form id="form">
+      <div class="inputField">
+        <input type="text" name="name" placeholder="Name" required>
+      </div>
+      <div class="inputField">
+        <input type="text" name="mobile" placeholder="Number" required>
+      </div>
+      <div class="inputField">  
+        <input type="number" name="age" placeholder="Age" required>
+      </div>
+      <div class="btnField">
+        <button type="submit"><h2>Submit</h2></button>
+        <button type="reset"><h2>Reset</h2></button>
+      </div>
+    </form>
+  </div>
+
+  <hr>
+
+  <h2>User List</h2>
+  <table border="1" id="userTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Age</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  
+  <div id="editOverlay" class="overlay hidden">
+    <div class="addUser">
+      <h2>Edit User</h2>
+      <form id="editForm">
+        <input type="hidden" name="id">
+        <div class="inputField">
+          <input type="text" name="name" placeholder="Name" required>
+        </div>
+        <div class="inputField">
+          <input type="text" name="mobile" placeholder="Number" required>
+        </div>
+        <div class="inputField">  
+          <input type="number" name="age" placeholder="Age" required>
+        </div>
+        <div class="btnField">
+          <button type="submit"><h2>Save</h2></button>
+          <button type="button" id="cancelEdit"><h2>Cancel</h2></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="1.js"></script>
+</body>
+</html>

@@ -3,10 +3,10 @@ const tableBody = document.querySelector("#userTable tbody");
 const editOverlay = document.getElementById("editOverlay");
 const editForm = document.getElementById("editForm");
 const cancelEdit = document.getElementById("cancelEdit");
-
+const API_BASE = "https://curd-application-kzpv.onrender.com/";
 
 function loadUsers() {
-  fetch("http://localhost:5000/users")
+  fetch(`${API_BASE}/users`)
     .then(res => res.json())
     .then(users => {
       tableBody.innerHTML = "";
@@ -32,7 +32,7 @@ form.addEventListener("submit", function(e) {
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
 
-  fetch("http://localhost:5000/add-user", {
+  fetch(`${API_BASE}/add-user`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data)
@@ -47,7 +47,7 @@ form.addEventListener("submit", function(e) {
 
 
 function deleteUser(id) {
-  fetch(`http://localhost:5000/delete-user/${id}`, { method: "DELETE" })
+  fetch(`${API_BASE}/delete-user/${id}`, { method: "DELETE" })
     .then(res => res.json())
     .then(() => loadUsers());
 }
@@ -71,7 +71,7 @@ editForm.addEventListener("submit", function(e) {
     age: Number(editForm.age.value)
   };
 
-  fetch(`http://localhost:5000/update-user/${id}`, {
+  fetch(`${API_BASE}/update-user/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data)
